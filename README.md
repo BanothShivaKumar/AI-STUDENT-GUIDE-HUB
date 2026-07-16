@@ -253,6 +253,7 @@ NODE_ENV=development
 FRONTEND_URL=http://localhost:5173
 
 # ── PostgreSQL Database ──────────────────────────────
+DATABASE_URL=postgresql://<db_user>:<db_password>@<db_host>:5432/<db_name>
 DB_NAME=your_database_name
 DB_USER=postgres
 DB_PASSWORD=your_postgres_password
@@ -268,6 +269,8 @@ GEMINI_API_KEY=your_gemini_api_key
 ```
 
 > ⚠️ **Never commit your `.env` file.** Add `server/.env` to your `.gitignore` immediately.
+>
+> ℹ️ `DATABASE_URL` takes precedence when present. If omitted, the server falls back to `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, and `DB_PORT`.
 
 ---
 
